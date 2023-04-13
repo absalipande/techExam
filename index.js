@@ -1,11 +1,17 @@
 function printY(size) {
+  // added some validations for the input 
+  if (typeof size !== 'number' || size < 1 || !Number.isInteger(size)) {
+    console.log('Input must be a positive integer');
+    return;
+  }
+
   // the max width of each row is twice the size of the input `size` - 1
   const maxWidth = size * 2 - 1;
   // to store the final output
   let output = '';
   // counter of current number in the pattern
   let count = 1;
-  
+
   // rows
   for (let i = 1; i <= size; i++) {
     // columns
